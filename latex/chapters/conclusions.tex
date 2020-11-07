@@ -1,0 +1,20 @@
+\chapter{Conclusions}
+
+In order to evaluate the performance of LoRaWAN a set of experiments was designed and conducted, using a custom implementation of the LoRa server infrastructure. As result of this operation it was discovered that the maximum possible distance that can be reach in rural area is 2500 meters, getting 71\% of correctly received packets using the most conservative (and slow) set-up (figure \ref{fig:sf12rural}). However the percentage falls at 14\% when considering higher data rate, SF10 in this case, and reach 0\% for the fastest data dates. The urban experiments, instead, showed results aligned to the theory, except for the influence of the forward error correction which in some cases were lower than expected.
+
+Both from the results of a theoretical analysis, published in \cite{lorawanlimits}, and from the experimental data shown in chapter \ref{chap:experiments}, it has arisen the need to extend the LoRaWAN standards to support multi-hop communications using a relay-based solution.
+
+The performances of the new architecture were evaluated through a set of experiments. Analyzing the results it turned out that at 2500 meters from the gateway it is possible to achieve up to 97\% of correctly received packets (10 bytes payload at SF 10, figure \ref{fig:sf10relay}), in comparison to only 14\% of correctly received packets with the standard one-hop topology in the same configuration (figure \ref{fig:sf10rural}). Moreover the two-hop solutions allowed to place the end-devices even further than the first set of experiments, reaching 79\% of correctly received packets at 3000 meters.
+
+Therefore, it is possible to conclude that the proposed solution can drastically improve the reliability of the communication, preserving the features of LoRaWAN in terms of energy efficiency. Furthermore, thanks to this extension it is possible to effectively enlarge the coverage area of a LoRaWAN network without requiring the installation of new expensive gateways.
+
+\section{Future development}
+This work can be the starting point for future extensions, such as:
+
+\begin{itemize}
+\item Develop an efficient \emph{Network Controller} that can be integrated with LoRa server developed in this thesis.
+
+\item Conduct some long-term experiments in order to collect more data and explore other possible scenarios in which it is reasonable to deploy the LoRaWAN technology.
+
+\item Try to achieve a complete implementation of the relay protocol, overcoming the limits that have forced to develop a subset of the original specification.
+\end{itemize}

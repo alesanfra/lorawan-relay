@@ -1,0 +1,90 @@
+\documentclass[a4paper,12pt,oneside,titlepage]{report}
+
+\usepackage{listings} % evidenziazione codice
+\usepackage{graphicx} % figure
+\usepackage{url} % formattazione url
+\usepackage{setspace} % interlinea
+\usepackage[utf8]{inputenc} % lettere accentate in UTF-8
+\usepackage{color}
+\usepackage[]{frontespizio}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage{float}
+%\usepackage[parfill]{parskip}
+%\usepackage[left=4cm,right=4cm,top=3cm,bottom=3cm]{geometry}
+
+% Define colors
+\definecolor{lgrey}{rgb}{0.95,0.95,0.95}
+\definecolor{dblue}{rgb}{0,0,0.545}
+
+
+\lstset{
+	language=java,
+	backgroundcolor=\color{white},
+	basicstyle=\linespread{1.0}\ttfamily\small,
+	%keywordstyle=\color{dblue}\bfseries,
+	commentstyle=\color{black}\itshape,
+	frame=tb,
+	columns=fullflexible,
+	showstringspaces=false,
+	breaklines=true,
+	numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt % this defines how far the numbers are from the text
+}
+
+% Redefine \emph{} as bold
+\let\emph\relax % there's no \RedeclareTextFontCommand
+\DeclareTextFontCommand{\emph}{\bfseries}
+
+
+\begin{document} 
+%\pagenumbering{roman}
+\onehalfspacing % interlinea 1.5
+\nocite{*} % inserisce nella bibliografia fonti non citate
+
+\begin{frontespizio}
+\Istituzione{Universit\`a di Pisa}
+\Dipartimento{Ingegneria dell'Informazione}
+\Corso[Laurea Magistrale]{Computer Engineering}
+\Titoletto{Tesi di Laurea Magistrale}
+\Logo[2.0cm]{img/unipi_pdf.pdf}
+\Rientro{1.0cm}
+\Titolo{Enabling relay-based communication in LoRa\\
+networks for the Internet of Things: design,\\
+implementation and experimental evaluation
+}
+\Candidato[456615]{Alessio Sanfratello}
+\Relatore{Prof.~Enzo Mingozzi}
+\Relatore{Prof.~Francesco Marcelloni}
+\Annoaccademico{2015/2016}
+\end{frontespizio}
+
+%\parskip = 2mm
+
+\input{appendices/ack}
+\input{chapters/abstract}
+
+\tableofcontents
+\listoffigures
+\listoftables
+\lstlistoflistings
+
+\input{chapters/introduction}
+\input{chapters/iot}
+\input{chapters/lorawan}
+\input{chapters/server}
+\input{chapters/experiments}
+\input{chapters/relay_protocol}
+\input{chapters/relay_experiments}
+\input{chapters/conclusions}
+
+\appendix
+\input{appendices/intervals}
+
+
+\bibliographystyle{plain} % stile bibliografia
+\bibliography{thesis} % inserisce la bibliografia
+
+\end{document}

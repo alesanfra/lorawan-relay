@@ -1,0 +1,30 @@
+\chapter{Introduction}
+
+In the field of the Internet of Things the interest against new and more efficient communication methods has recently increased so that now all major players in the industry are involved in the development process of new communication protocols.
+
+Among them, the Low-Power Wide Area Networks (LPWANs) seem to be the most promising family of technologies thanks the encouraging performances advertised by its developers. They typically combine very long range of coverage with an high energy efficiency, making them the enablers for an all new class of smart applications. In the past few years several companies have tried to develop its own protocol, with quite different results. SIGFOX, for instance, developed the homonym modulation technique, but other than sell their own technology to other manufacturers, they decided to propose themselves also as a network operator, selling both the technology and the network access to all potential customers.
+
+On the contrary, Semtech decided to follow a radical different path with LoRa, their own modulation technique. As matter of fact, the company decided to keep the monopoly only on the production of the transceivers, making LoRa available for developers since the beginning. Moreover they decided to open up the specification of LoRaWAN, the MAC layer wich runs on top of LoRa.
+
+Due to the fact that LoRa was introduced only few years ago, there are no exhaustive performance evaluation in different environmental conditions, since the only available experimental results are related to well defined use cases.
+
+The goal of this thesis is to compensate for the lack of data by designing and performing a set of experiments with the aim to discover the optimal parameters which, in different scenarios, minimize both the packet error rate and the energy consumption.
+
+From the analysis of results of the aforementioned experiments it turned out that the use of a relay based approach in some conditions would lead to big performance improvement in terms of number of correctly received packets, without sacrificing the energy efficiency. Consequently an extension to the LoRaWAN protocol has been designed enabling the possibility for an end-device to act as relay depending on the needs. To prove the performance enhancements expected from the analysis phase, a new set of experiments was conducted. 
+
+Another justification to the development of a relay-based solution can be found in "Understanding the limits of LoRaWAN"\cite{lorawanlimits}: the authors tried to highlight the weaknesses of this technology and proposed either to transform LoRaWAN into a Time Division Access (TDMA) network and to design multi-hop solution in order to reduce both the number of collisions and the needed transmission power. This two proposals were both successfully implemented in this thesis.
+
+\section{Structure of the thesis}
+Chapter 2 makes an overview on the current technologies available for the internet of things, focusing on the new and promising Low-Power Wide Area Networks (LPWANs) and in particular on LoRa.
+
+In chapter 3 the focus is shifted to LoRaWAN, the open MAC layer which works on top of LoRa, summarizing the main features and presenting the strengths of the protocol. Moreover, the server infrastructure, needed to manage a LoRaWAN network, is analyzed along with the message protocol used to make all components communicate.
+
+Chapter 4 describes both the architecture and the implementation of the new server infrastructure which has been designed from scratch to be suitable for experimental purposes
+
+Chapter 5 includes all the experiments performed in order to evaluate the LoRaWAN technology, highlighting the design choices and presenting all the results.
+
+Chapter 6 presents the new protocol which is designed to enable relay based communications in LoRaWAN networks, along with the implementation on the server and on the motes. 
+
+In Chapter 7 the performance improvement achieved is reported through the results of another set of experiments conducted with the new relay protocol.
+
+Finally, chapter 8 presents the conclusions and some hints for future development of this work.

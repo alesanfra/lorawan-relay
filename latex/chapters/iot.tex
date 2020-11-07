@@ -1,0 +1,70 @@
+\chapter{Technology overview}
+
+The \emph{Internet of Things} is a new communication paradigm which has recently arisen in the context of computer networks. It consists of extending Internet connectivity to physical devices, vehicles, buildings and other items, enabling them to collect and exchange data. There are many features that distinguish IoT from previous network architectures:
+
+\begin{itemize}
+\item \emph{Machine-to-Machine paradigm}: unlike the traditional internet applications, such as emails or web, in the IoT the devices can communicate without requiring human interaction. For instance some sensor can collect data and send them to a controller, which is responsible for managing some actuators. In this case all communications are triggered by the devices without human interaction;
+
+\item \emph{Wireless communications}: the new applications enabled by the IoT often require large range of coverage, especially considering Smart Cities. Thus, combined with an increasing density of the smart devices, leads to the need to have only wireless communications in the IoT scenario;
+
+\item \emph{Low power consumption}: in the IoT scenario devices are often battery powered, so one of the goals for protocols designed specifically for the IoT is to minimize power consumption;
+
+\item \emph{Place and Play}: To achieve an ubiquitous coverage, the IoT devices must run out-of-the-box, without requiring any configuration;
+
+\item \emph{Low cost}: all hardware used for the IoT must be simple such that can be massive produced at low cost.
+\end{itemize}
+Therefore, in order for the Internet of Things to quickly spread out, it is necessary to find a communication technology that is designed from the beginning to meet this requirements. To this aim in the following pages the main communication technologies are described and quickly analyzed. 
+
+\section{Current technologies}
+Before exploring the features of LoRa and the other LPWANs, a small survey on the current available technologies which enable IoT applications is presented, highlighting qualities and drawbacks of each one.
+
+\subsection{IEEE 802.15.4}
+The family of IEEE 802.15.4 based technologies includes many standards, such as ZeeBee and 6LoWPAN, and at the moment is used by the vast majority of the connected \emph{things} \cite{centenaro}. In general IEEE 802.15.4 solutions are very low cost and have low energy consumption, however the short range of coverage raises the need of complex multi-hop architectures, which can be difficult to develop and deploy.
+
+\subsection{Wi-Fi}
+Wi-Fi, which is the commercial name for the IEEE 802.11 family of communication standard, is one of the most widespread wireless technologies in the world, being on the market since 1997. Even if Wi-Fi represents the state of the art of Wireless LANs, for which it has been designed since the beginning, it not the ideal solution for the IoT because of the high power consumption and the small range of coverage. As a matter of fact, Wi-Fi is used for IoT only when the aforementioned limits are not relevant, for instance in some smart home and smart building applications.
+
+To overcome these issues the Wi-Fi alliance has developed a new revision of the standard, the IEEE 802.11ah, which solves part of the problems and enables the communication in sub-GHZ bands, with theoretical performances suitable for the IoT needs.
+
+\subsection{Cellular networks}
+Cellular networks, with its long range of communication and its almost ubiquitous coverage, is the technology which is probably the closest one to the IoT needs. As a matter of fact it is currently used in contexts in which any other competitors are able to reach its performances. 
+
+However the use of licensed frequencies involves operating costs are not negligible. Moreover, the high data rates that are offered to the connected end-devices leads to significant power consumption, which may become a great issue for battery power devices.
+
+To address these issues a new revision of the current state of the art cellular technology, LTE-M, is expected to be released in the near future.
+
+\section{Low-Power WANs}
+
+Low-Power WAN (LPWAN) technologies are designed for machine-to-machine (M2M) networking environments. With decreased power requirements, longer range and lower cost than a mobile network, LPWANs are thought to enable a much wider range of M2M and Internet of Things applications, which have been constrained by budgets and power issues.
+
+LPWAN data transfer rates are very low, as well as the power consumption of connected devices. LPWAN enables connectivity for networks of devices that require less bandwidth than what the standard home equipment provides. Furthermore, LPWANs can operate at a lower cost, with greater power efficiency. The networks can also support more devices over a larger coverage area than consumer mobile technologies and have better bi-directionality.
+
+The need for a technology such as LPWAN is increasing in industrial IoT, civic and commercial applications. In these environments, the huge numbers of connected devices can only be supported if communications are efficient and power costs low.
+
+In the past few years several LPWAN technologies were developed, and in the following paragraphs the most promising ones are presented.
+
+\subsection{SIGFOX}
+
+SIGFOX, the first LPWAN technology proposed in the IoT market, was founded in 2009 and has been growing very fast since then. The SIGFOX physical layer employs an Ultra Narrow Band (UNB) wireless modulation, while the network layer protocols are the “secret sauce” of the SIGFOX network and, as such, there exists basically no publicly available documentation. Indeed, the SIGFOX business model is that of an operator for IoT services, which hence does not need to open the specifications of its inner modules.
+
+The first releases of the technology only supported uni-directional uplink communication, i.e., from the device towards the aggregator; however bi-directional communication is now supported. SIGFOX claims that each gateway can handle up to a million connected objects, with a coverage area of 30–50 km in rural areas and 3–10 km in urban areas. \cite{centenaro}
+
+
+\subsection{Ingenu}
+
+An emerging star in the landscape of LPWANs is Ingenu, a trademark of On-Ramp Wireless, a company headquartered in San Diego (USA). The company developed and owns the rights of the patented technology called Random Phase Multiple Access (RPMA), which is deployed in different networks. Conversely to the other LPWAN solutions, this technology works in the 2.4 GHz band but, thanks to a robust physical layer design, can still operate over long-range wireless links and under the most challenging RF environments.\cite{centenaro}
+
+%\subsection{Weightless}
+
+
+\subsection{LoRa}
+
+LoRa is a proprietary spread spectrum modulation technique, which was initially developed by Semtech, and now is under the control of the LoRa Alliance. Unlike the other LPWAN technologies, LoRa is based on the chirp spread spectrum modulation, which makes it resistant against multipath fading and Doppler effect, and improves the receiver’s sensitivity. 
+
+Very long range of communication can be achieved with LoRa thanks to the sub-GHz radio bands and very low data rates. The chip rate is equal to the programmed bandwidth (chip-per-second-per-Hertz) and can take values of 125, 250 or 500 kHz. Moreover, the spreading factor (SF) for a LoRa link may be varied depending on the communication distance and desired on-air time. Since the spreading codes for different SFs are orthogonal, the simultaneous transmission in the same frequency channel using different SFs is possible. \cite{lpwancoverage}
+
+To drastically reduce the interference problems, LoRa includes different level of forward error correction codes, which can be varied depending on the environmental conditions.
+
+
+
+
